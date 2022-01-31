@@ -1,6 +1,6 @@
 # shexec
 
-A simple shellcode example program
+A simple shellcode program example
 
 This demonstration is based in 3 stages, the firt one is that the shell code is compiled to a pure x86_64 CPU opcodes and saved to a file, the second stage the shellcode is loaded by the shload program that will map the current shellcode opcodes into memory and mark the memory region as 'executable' and 'readable' and a forced jump is made to this memory region, the third stage is the malware program loaded by the shell code
 
