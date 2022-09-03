@@ -3,7 +3,7 @@
 %define SYS_EXECVE 59
 
 BITS 64
-; execve ("./hw", ["./hw", NULL], NULL);
+; execve ("./mw", ["./mw", NULL], NULL);
 ; ./mw
 
 ;  envp = NULL

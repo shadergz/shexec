@@ -12,7 +12,6 @@ typedef void (*scfunc_t)(void);
 int main (void)
 {
     /* Loading the shell code */
-
     int fd = open ("shcode", O_RDONLY);
     struct stat shs;
     assert (fd != -1);
@@ -20,7 +19,7 @@ int main (void)
 
     fstat (fd, &shs);
 
-    /*  This map will be automically destroyed after the new image process overwrite 
+    /*  This map will be automatically destroyed after the new image process overwrite
      *  the current process (the malware program) 
     */
     unsigned char *shell_code = mmap (NULL, shs.st_size, 

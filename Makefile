@@ -1,12 +1,20 @@
 ASMC=yasm
 ASMFLAGS=-f bin
 
+MW_SRC=mw.c
+SHLOAD_SRC=shload.c
+SHELL_CODE_SRC=shcode.asm
+
 all: mw shcode shload
 
-shcode: shcode.asm
-	$(ASMC) $(ASMFLAGS) -o $@ $^
+mw: $(MW_SRC)
+	$(CC) -o $@ $^
 
-%.c: %.o
+shload: $(SHLOAD_SRC)
+	$(CC) -o $@ $^
+
+shcode: $(SHELL_CODE_SRC)
+	$(ASMC) $(ASMFLAGS) -o $@ $<
 
 clean:
 	-rm -f mw shcode shload
